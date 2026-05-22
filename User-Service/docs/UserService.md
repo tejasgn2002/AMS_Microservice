@@ -1,6 +1,8 @@
 ## User Register
 api: POST 
-```bash localhost:8082/user/register ```
+```bash 
+localhost:8082/user/register
+```
 body: 
 ```bash
 {
@@ -17,12 +19,16 @@ body:
 
 ## Users List
 api: GET
-```bash localhost:8082/user/list ```
+```bash 
+localhost:8082/user/list 
+```
 
 
 ## User Login
 api: POST
-```bash localhost:8082/user/login ```
+```bash 
+localhost:8082/user/login 
+```
 body:
 ```bash 
 {
