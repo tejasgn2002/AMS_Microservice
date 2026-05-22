@@ -1,0 +1,9 @@
+DROP DATABASE IF EXISTS User_Service;
+
+CREATE DATABASE IF NOT EXISTS  User_Service;
+
+USE user_service;
+
+SHOW TABLES;
+
+SELECT * FROM user_table;
