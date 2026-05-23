@@ -19,26 +19,26 @@ import com.tejas.ams.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
 	
 	private final UserService service;
 	
 	//list users
-	@GetMapping("list")
+	@GetMapping("/list")
 	public ResponseEntity<List<UserDto>> getUsers(){
 		return ResponseEntity.status(HttpStatus.OK).body(service.getUsers());
 	}
 	
 	//Registration of User
-	@PostMapping("register")
+	@PostMapping("/register")
 	public ResponseEntity<Map<String,Object>> userRegistration(@RequestBody UserDto userDto){
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.registerUser(userDto));
 	}
 	
 	//login user
-	@PostMapping("login")
+	@PostMapping("/login")
 	public ResponseEntity<Map<String,Object>> userLogin(@RequestBody LoginDto loginDto){
 		return ResponseEntity.status(HttpStatus.OK).body(service.login(loginDto));
 	}

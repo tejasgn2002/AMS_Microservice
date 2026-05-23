@@ -284,3 +284,74 @@
 2026-05-22T09:11:07.595+05:30  INFO 8492 --- [User-Service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
 2026-05-22T09:11:07.605+05:30  INFO 8492 --- [User-Service] [restartedMain] c.tejas.ams.user.UserServiceApplication  : Started UserServiceApplication in 3.644 seconds (process running for 135.317)
 2026-05-22T09:11:07.612+05:30  INFO 8492 --- [User-Service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-22T09:54:44.097+05:30  INFO 7244 --- [User-Service] [restartedMain] c.tejas.ams.user.UserServiceApplication  : Starting UserServiceApplication using Java 17.0.3 with PID 7244 (E:\Tejas\Enterprise Application\Airline-Managment-System-Microservice\User-Service\target\classes started by tejas in E:\Tejas\Enterprise Application\Airline-Managment-System-Microservice\User-Service)
+2026-05-22T09:54:44.874+05:30  INFO 7244 --- [User-Service] [restartedMain] c.tejas.ams.user.UserServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-05-22T09:54:47.668+05:30  INFO 7244 --- [User-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-22T09:54:47.668+05:30  INFO 7244 --- [User-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-22T09:54:50.836+05:30  INFO 7244 --- [User-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22T09:54:50.988+05:30  INFO 7244 --- [User-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 1 JPA repository interface.
+2026-05-22T09:54:54.317+05:30  INFO 7244 --- [User-Service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-22T09:54:54.352+05:30  INFO 7244 --- [User-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-22T09:54:54.354+05:30  INFO 7244 --- [User-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-22T09:54:54.457+05:30  INFO 7244 --- [User-Service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6787 ms
+2026-05-22T09:54:57.689+05:30  INFO 7244 --- [User-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-22T09:54:59.327+05:30  INFO 7244 --- [User-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@586fa199
+2026-05-22T09:54:59.332+05:30  INFO 7244 --- [User-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-22T09:55:00.082+05:30  INFO 7244 --- [User-Service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-22T09:55:00.411+05:30  INFO 7244 --- [User-Service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-22T09:55:04.693+05:30  INFO 7244 --- [User-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22T09:55:05.372+05:30  INFO 7244 --- [User-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/User_Service]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: User_Service/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22T09:55:11.576+05:30  INFO 7244 --- [User-Service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22T09:55:11.999+05:30  INFO 7244 --- [User-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22T09:55:12.986+05:30  INFO 7244 --- [User-Service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-22T09:55:15.063+05:30  WARN 7244 --- [User-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-22T09:55:18.040+05:30  INFO 7244 --- [User-Service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-22T09:55:18.251+05:30  INFO 7244 --- [User-Service] [restartedMain] c.tejas.ams.user.UserServiceApplication  : Started UserServiceApplication in 35.948 seconds (process running for 40.855)
+2026-05-22T09:56:40.807+05:30  INFO 7244 --- [User-Service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 5 class path changes (0 additions, 0 deletions, 5 modifications)
+2026-05-22T09:56:40.937+05:30  INFO 7244 --- [User-Service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-22T09:56:41.541+05:30  INFO 7244 --- [User-Service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-22T09:56:41.551+05:30  INFO 7244 --- [User-Service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22T09:56:41.565+05:30  INFO 7244 --- [User-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-22T09:56:41.586+05:30  INFO 7244 --- [User-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-22T09:56:41.802+05:30  INFO 7244 --- [User-Service] [restartedMain] c.tejas.ams.user.UserServiceApplication  : Starting UserServiceApplication using Java 17.0.3 with PID 7244 (E:\Tejas\Enterprise Application\Airline-Managment-System-Microservice\User-Service\target\classes started by tejas in E:\Tejas\Enterprise Application\Airline-Managment-System-Microservice\User-Service)
+2026-05-22T09:56:41.803+05:30  INFO 7244 --- [User-Service] [restartedMain] c.tejas.ams.user.UserServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-05-22T09:56:43.146+05:30  INFO 7244 --- [User-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22T09:56:43.194+05:30  INFO 7244 --- [User-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2026-05-22T09:56:43.620+05:30  INFO 7244 --- [User-Service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-22T09:56:43.621+05:30  INFO 7244 --- [User-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-22T09:56:43.622+05:30  INFO 7244 --- [User-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-22T09:56:43.727+05:30  INFO 7244 --- [User-Service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1917 ms
+2026-05-22T09:56:43.807+05:30  INFO 7244 --- [User-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-22T09:56:43.968+05:30  INFO 7244 --- [User-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a7392bb
+2026-05-22T09:56:43.969+05:30  INFO 7244 --- [User-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-22T09:56:44.095+05:30  INFO 7244 --- [User-Service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-22T09:56:45.853+05:30  INFO 7244 --- [User-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22T09:56:45.869+05:30  INFO 7244 --- [User-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/User_Service]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: User_Service/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22T09:56:47.172+05:30  INFO 7244 --- [User-Service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22T09:56:47.224+05:30  INFO 7244 --- [User-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22T09:56:47.918+05:30  WARN 7244 --- [User-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-22T09:56:48.161+05:30  INFO 7244 --- [User-Service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-22T09:56:48.167+05:30  INFO 7244 --- [User-Service] [restartedMain] c.tejas.ams.user.UserServiceApplication  : Started UserServiceApplication in 6.474 seconds (process running for 130.77)
+2026-05-22T09:56:48.172+05:30  INFO 7244 --- [User-Service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
