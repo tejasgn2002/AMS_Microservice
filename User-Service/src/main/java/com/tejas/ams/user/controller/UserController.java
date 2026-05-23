@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tejas.ams.user.dto.LoginDto;
 import com.tejas.ams.user.dto.UserDto;
-import com.tejas.ams.user.entity.User;
 import com.tejas.ams.user.service.UserService;
 
 import lombok.RequiredArgsConstructor;
