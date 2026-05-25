@@ -12,24 +12,31 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <!-- {{"Tejas"}} -->
       <div class="col-12 col-lg-10 col-xl-8">
         <div class="row gy-5 justify-content-center">
           <div class="col-12 col-lg-5">
-            <form>
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
               <div class="row gy-3 overflow-hidden">
                 <!-- Name -->
                 <div class="col-12">
-                  <div class="form-floating mb-3 ">
+                  <div class="form-floating mb-3">
                     <input
                       type="text"
                       class="form-control border-0 border-bottom rounded-0"
                       id="name"
+                      [class.is-invalid]="name?.invalid && (name?.touched || name?.dirty)"
+                      formControlName="name"
                       placeholder="Name"
                     />
                     <label for="name" class="form-label"
                       >Name<span class="text-danger">*</span></label
                     >
+                    <div
+                      *ngIf="name?.invalid && (name?.touched || name?.dirty)"
+                      class="invalid-feedback"
+                    >
+                      Name is required.
+                    </div>
                   </div>
                 </div>
                 <!-- Username -->
@@ -40,11 +47,21 @@
                       class="form-control border-0 border-bottom rounded-0"
                       placeholder="Username"
                       id="username"
+                      [class.is-invalid]="
+                        username?.invalid && (username?.touched || username?.dirty)
+                      "
+                      formControlName="username"
                       required
                     />
                     <label for="username" class="form-label"
                       >Username<span class="text-danger">*</span></label
                     >
+                    <div
+                      *ngIf="username?.invalid && (username?.touched || username?.dirty)"
+                      class="invalid-feedback"
+                    >
+                      Username is required.
+                    </div>
                   </div>
                 </div>
                 <!-- Password -->
@@ -55,12 +72,29 @@
                       class="form-control border-0 border-bottom rounded-0"
                       name="password"
                       id="password"
+                      [class.is-invalid]="
+                        password?.invalid && (password?.touched || password?.dirty)
+                      "
+                      formControlName="password"
                       placeholder="Password"
                       required
                     />
                     <label for="password" class="form-label"
                       >Password<span class="text-danger">*</span></label
                     >
+                    <div
+                      *ngIf="password?.invalid && (password?.touched || password?.dirty)"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="password?.errors?.['required']">Password is required.</div>
+                      <div *ngIf="password?.errors?.['minlength']">
+                        Password must be at least 6 characters long.
+                      </div>
+                      <div *ngIf="password?.errors?.['pattern']">
+                        Password must contain at least one letter and one number and one special
+                        character.
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <!-- Category -->
@@ -70,6 +104,11 @@
                       class="form-select border-0 border-bottom rounded-0"
                       name="category"
                       id="category"
+                      [class.is-invalid]="
+                        customerCategory?.invalid &&
+                        (customerCategory?.touched || customerCategory?.dirty)
+                      "
+                      formControlName="customerCategory"
                       required
                     >
                       <option value="" disabled selected>Select category</option>
@@ -80,6 +119,15 @@
                     <label for="category" class="form-label"
                       >Category<span class="text-danger">*</span></label
                     >
+                    <div
+                      *ngIf="
+                        customerCategory?.invalid &&
+                        (customerCategory?.touched || customerCategory?.dirty)
+                      "
+                      class="invalid-feedback"
+                    >
+                      Category is required.
+                    </div>
                   </div>
                 </div>
                 <!-- Phone Number -->
@@ -90,9 +138,19 @@
                       class="form-control border-0 border-bottom rounded-0"
                       placeholder="Phone Number"
                       id="phoneNumber"
+                      [class.is-invalid]="
+                        phoneNumber?.invalid && (phoneNumber?.touched || phoneNumber?.dirty)
+                      "
+                      formControlName="phoneNumber"
                       required
                     />
                     <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <div
+                      *ngIf="phoneNumber?.invalid && (phoneNumber?.touched || phoneNumber?.dirty)"
+                      class="invalid-feedback"
+                    >
+                      Phone Number is required and must be 10 digits.
+                    </div>
                   </div>
                 </div>
                 <!-- Email -->
@@ -103,10 +161,18 @@
                       class="form-control border-0 border-bottom rounded-0"
                       name="email"
                       id="email"
+                      [class.is-invalid]="email?.invalid && (email?.touched || email?.dirty)"
+                      formControlName="email"
                       placeholder="name@example.com"
                       required
                     />
                     <label for="email" class="form-label">Email</label>
+                    <div
+                      *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+                      class="invalid-feedback"
+                    >
+                      Email is required and must be a valid email address.
+                    </div>
                   </div>
                 </div>
                 <!-- Address -->
@@ -117,10 +183,18 @@
                       class="form-control border-0 border-bottom rounded-0"
                       name="address"
                       id="address"
+                      [class.is-invalid]="address?.invalid && (address?.touched || address?.dirty)"
+                      formControlName="address"
                       placeholder="Address"
                       required
                     />
                     <label for="address" class="form-label">Address</label>
+                    <div
+                      *ngIf="address?.invalid && (address?.touched || address?.dirty)"
+                      class="invalid-feedback"
+                    >
+                      Address is required.
+                    </div>
                   </div>
                 </div>
                 <!-- Date of Birth -->
@@ -131,16 +205,36 @@
                       class="form-control border-0 border-bottom rounded-0"
                       name="dateOfBirth"
                       id="dateOfBirth"
+                      [class.is-invalid]="
+                        (dateOfBirth?.invalid && (dateOfBirth?.touched || dateOfBirth?.dirty)) ||
+                        registrationForm.hasError('underAge') ||
+                        registrationForm.hasError('invalidDateOfBirth')
+                      "
+                      formControlName="dateOfBirth"
                       value=""
                       placeholder="Date of Birth"
                       required
                     />
                     <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                    <div *ngIf="dateOfBirth?.invalid && (dateOfBirth?.touched || dateOfBirth?.dirty)" class="invalid-feedback">
+                      Date of Birth is required.
+                    </div>
+                    <div *ngIf="registrationForm.hasError('invalidDateOfBirth')" class="invalid-feedback">
+                      Invalid date of birth.
+                    </div>
+                    <div *ngIf="registrationForm.hasError('underAge')" class="invalid-feedback">
+                      You must be at least 18 years old.
+                    </div>
                   </div>
                 </div>
+
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn btn-lg btn-dark rounded-0 fs-6" type="submit">
+                    <button
+                      [disabled]="registrationForm.invalid"
+                      class="btn btn-lg btn-dark rounded-0 fs-6"
+                      type="submit"
+                    >
                       Sign up
                     </button>
                   </div>

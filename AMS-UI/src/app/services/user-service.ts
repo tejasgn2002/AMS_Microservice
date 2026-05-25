@@ -24,5 +24,20 @@ export class UserService {
     );
   }
 
+  postUserRegistration(data: any) {
+    return this.http.post('http://localhost:8765/user/register', data).pipe(
+      catchError((error) => { 
+        let message = 'Registration failed. Please try again later.';
+        if(error.status === 400){
+          message = 'Invalid registration data. Please check your input and try again.';
+        }
+        else if(error.status === 500){
+          message = 'Server error. Please try again later.';
+        }
+        return throwError(() => new Error(message));
+      })
+    );
+  }
+
 
 }
