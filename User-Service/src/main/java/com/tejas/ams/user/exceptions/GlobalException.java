@@ -31,4 +31,9 @@ public class GlobalException {
 	public ResponseEntity<Map<String,Object>> invalidLoginHandler(InvalidLoginException ex){
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response.getErrorMessage(ex.getMessage(), HttpStatus.UNAUTHORIZED));
 	}
+
+	@ExceptionHandler(GeneralConflict.class)
+	public ResponseEntity<Map<String,Object>> generalConflictHandler(GeneralConflict ex){
+		return ResponseEntity.status(HttpStatus.CONFLICT).body(response.getErrorMessage(ex.getMessage(), HttpStatus.CONFLICT));
+	}
 }

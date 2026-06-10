@@ -16,4 +16,10 @@ public interface UserService {
 
 	@Nullable
 	Map<String,Object> login(LoginDto loginDto);
+
+	@Nullable
+	Map<String, Object> checkUsernameAvailability(String username);
+
+	@Nullable
+	Map<String, Object> emailExistsCheck(String emailId);
 }

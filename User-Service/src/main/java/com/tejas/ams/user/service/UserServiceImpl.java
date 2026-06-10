@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.tejas.ams.user.dto.LoginDto;
 import com.tejas.ams.user.dto.UserDto;
 import com.tejas.ams.user.entity.User;
+import com.tejas.ams.user.exceptions.GeneralConflict;
 import com.tejas.ams.user.exceptions.GeneralError;
 import com.tejas.ams.user.exceptions.InvalidLoginException;
 import com.tejas.ams.user.exceptions.UserNotFoundException;
@@ -32,6 +33,12 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Map<String,Object> registerUser(UserDto userDto) {
 		log.info("Request for the User Registration");
+		
+		Map<String, Object> emailExistsResponse = emailExistsCheck(userDto.getEmail());
+		if ((Boolean) emailExistsResponse.get("emailExists")) {
+			throw new GeneralConflict("Email already exists");
+		}
+
 		Integer id;
 		try{
 			id = userRepo.save(mapper.toEntity(userDto)).getUserId();
@@ -73,6 +80,22 @@ public class UserServiceImpl implements UserService{
 		}
 		log.info("Login Successfull for username: "+loginDto.getUsername());
 		return responseUtil.genericSuccess("message","Login Successfull");
+	}
+	
+	@Override
+	public @Nullable Map<String, Object> checkUsernameAvailability(String username) {
+		log.info("Checking username availability for: "+username);
+		boolean isAvailable = userRepo.findByUsername(username).isEmpty();
+		log.info("Username availability for '"+username+"': "+isAvailable);
+		return responseUtil.genericSuccess("available", isAvailable);
+	}
+
+	@Override
+	public @Nullable Map<String, Object> emailExistsCheck(String emailId) {
+		log.info("Checking email existence for: "+emailId);
+		boolean isExists = !userRepo.findByEmail(emailId).isEmpty();
+		log.info("Email existence for '"+emailId+"': "+isExists);
+		return responseUtil.genericSuccess("emailExists", isExists);
 	}
 	
 	
