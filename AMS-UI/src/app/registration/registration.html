@@ -43,6 +43,7 @@
                 <div class="col-12">
                   <div class="form-floating mb-3">
                     <input
+                      #usernameInput
                       type="text"
                       class="form-control border-0 border-bottom rounded-0"
                       placeholder="Username"
@@ -50,18 +51,22 @@
                       [class.is-invalid]="
                         username?.invalid && (username?.touched || username?.dirty)
                       "
+                      [class.is-valid]="username?.valid && usernameAvailable"
                       formControlName="username"
                       required
                     />
                     <label for="username" class="form-label"
                       >Username<span class="text-danger">*</span></label
                     >
-                    <div
-                      *ngIf="username?.invalid && (username?.touched || username?.dirty)"
-                      class="invalid-feedback"
-                    >
-                      Username is required.
-                    </div>
+                    @if (username?.invalid) {
+                      @if (username?.errors?.['required']) {
+                        <div class="invalid-feedback">Username is required.</div>
+                      }
+                      @if (username?.errors?.['notAvailable']) {
+                        <div class="invalid-feedback">Username is not available.</div>
+                      }
+                    } 
+                      <div class="valid-feedback">Username is available.</div>
                   </div>
                 </div>
                 <!-- Password -->
@@ -139,14 +144,14 @@
                       placeholder="Phone Number"
                       id="phoneNumber"
                       [class.is-invalid]="
-                        phoneNumber?.invalid && (phoneNumber?.touched || phoneNumber?.dirty)
+                        phone?.invalid && (phone?.touched || phone  ?.dirty)
                       "
-                      formControlName="phoneNumber"
+                      formControlName="phone"
                       required
                     />
                     <label for="phoneNumber" class="form-label">Phone Number</label>
                     <div
-                      *ngIf="phoneNumber?.invalid && (phoneNumber?.touched || phoneNumber?.dirty)"
+                      *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)"
                       class="invalid-feedback"
                     >
                       Phone Number is required and must be 10 digits.

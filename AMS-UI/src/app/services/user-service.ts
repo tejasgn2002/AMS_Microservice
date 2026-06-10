@@ -34,10 +34,24 @@ export class UserService {
         else if(error.status === 500){
           message = 'Server error. Please try again later.';
         }
+        else if(error.status === 409){
+          message = error.error.error;
+        }
         return throwError(() => new Error(message));
       })
     );
   }
 
+  checkUsernameAvailability(username: any) {
+    return this.http.get(`http://localhost:8765/user/check-username?username=${username}`).pipe(
+      catchError((error) => {
+        let message = 'Could not check username availability. Please try again later.';
+        if(error.status === 500){
+          message = 'Server error. Please try again later.';
+        }
+        return throwError(() => new Error(message));
+      })
+    );
+  }
 
 }

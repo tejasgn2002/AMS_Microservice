@@ -29,6 +29,7 @@ export class Login {
         this.errormessage = '';
         this.changeDetect.detectChanges();
         console.log(response.message);
+        alert(response.message);
       },
       error:(error)=>{
         this.errormessage = error.message;
